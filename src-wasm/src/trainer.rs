@@ -177,13 +177,6 @@ pub enum WaveFunction {
 }
 
 impl WaveFunction {
-    pub fn new(name: &str) -> &'static str {
-        match name {
-            Sine => "Sine",
-            SawTooth => "SawTooth",
-        }
-    }
-
     pub fn evaluate(&self, x: f32, scale: f32, x_translation: f32) -> f32 {
         match self {
             Self::Sine => (x + x_translation).sin() * scale,
